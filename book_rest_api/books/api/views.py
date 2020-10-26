@@ -5,10 +5,18 @@ from rest_framework.response import Response
 
 from ..filters import BookFilterSet
 from ..models import Book
-from .serializers import DataSerializer, VolumeSerializer, ItemSerializer
+from .serializers import (DataSerializer, VolumeSerializer, ItemSerializer)
 
 
 class BooksList(generics.ListAPIView):
+    """
+    Optionally filters returned books based 
+    on a given parameters.
+    Also allows for ordering by title, published_date,
+    author and category.
+    ex. /api/books/?category=Religion&ordering=title
+    Use 'filter' button to use simple filter interface.
+    """
     queryset = Book.objects.all()
     serializer_class = VolumeSerializer
     filterset_class = BookFilterSet
@@ -19,14 +27,6 @@ class BooksList(generics.ListAPIView):
         'category',
     ]
 
-    """
-    Optionally filters returned books based 
-    on a given author or date queryset parameters.
-    ex. /api/books/?category=Religion
-    Also allows for ordering by publishedDate and 
-    author if `?ordering=` is added to url.
-    """
-
 
 class BookDetails(generics.RetrieveAPIView):
     queryset = Book.objects.all()
@@ -35,6 +35,10 @@ class BookDetails(generics.RetrieveAPIView):
 
 @api_view(['POST'])
 def create_update_books_db_view(request, *args, **kwargs):
+    """
+    View for loading DB from json file via POST.
+    Creates book if not exist, else updates.
+    """
     serializer = DataSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
         serializer.save()
@@ -44,8 +48,11 @@ def create_update_books_db_view(request, *args, **kwargs):
 
 @api_view(['POST'])
 def create_book_view(request, *args, **kwargs):
+    """
+    Creates or updates single book
+    """
     serializer = ItemSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
         serializer.save()
-        return Response(serializer.data, status=201)
+        return Response("Record created/updated", status=201)
     return Response({}, status=400)
