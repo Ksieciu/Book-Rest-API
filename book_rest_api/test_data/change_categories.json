@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "id": "ABC",
+      "volumeInfo": {
+        "title": "Test Title",
+        "categories": [
+          "Testing Change Category 1", "Testing Change Category 2"
+        ],
+        "authors": [
+          "Test Author"
+        ]
+      }
+    }
+  ]
+}

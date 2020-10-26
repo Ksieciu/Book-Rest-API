@@ -1,0 +1,39 @@
+{
+    "title": "Hobbit czyli Tam i z powrotem",
+    "authors": [
+      "J. R. R. Tolkien"
+    ],
+    "publishedDate": "2004",
+    "industryIdentifiers": [
+      {
+        "type": "ISBN_10",
+        "identifier": "8320717507"
+      },
+      {
+        "type": "ISBN_13",
+        "identifier": "9788320717501"
+      }
+    ],
+    "readingModes": {
+      "text": false,
+      "image": false
+    },
+    "pageCount": 315,
+    "printType": "BOOK",
+    "categories": [
+      "Baggins, Bilbo (Fictitious character)"
+    ],
+    "averageRating": 5,
+    "ratingsCount": 2,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "preview-1.0.0",
+    "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=YyXoAAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=YyXoAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.pl/books?id=YyXoAAAACAAJ&dq=Hobbit&hl=&cd=1&source=gbs_api",
+    "infoLink": "http://books.google.pl/books?id=YyXoAAAACAAJ&dq=Hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Hobbit_czyli_Tam_i_z_powrotem.html?hl=&id=YyXoAAAACAAJ"
+  }
