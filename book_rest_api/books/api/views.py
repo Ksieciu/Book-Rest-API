@@ -2,8 +2,8 @@ from django.shortcuts import render
 from rest_framework import generics, filters
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from django_filters.rest_framework import DjangoFilterBackend
 
+from ..filters import BookFilterSet
 from ..models import Book
 from .serializers import DataSerializer, VolumeSerializer, ItemSerializer
 
@@ -11,11 +11,7 @@ from .serializers import DataSerializer, VolumeSerializer, ItemSerializer
 class BooksList(generics.ListAPIView):
     queryset = Book.objects.all()
     serializer_class = VolumeSerializer
-    filterset_fields = [
-        'published_date', 
-        'author__name', 
-        'category',
-    ]
+    filterset_class = BookFilterSet
     ordering_fields = [
         'title',
         'published_date', 
@@ -42,7 +38,7 @@ def create_update_books_db_view(request, *args, **kwargs):
     serializer = DataSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
         serializer.save()
-        return Response(serializer.data, status=201)
+        return Response({"Database has been updated"}, status=201)
     return Response({}, status=400)
 
 
