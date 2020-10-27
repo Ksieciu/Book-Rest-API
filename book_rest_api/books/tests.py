@@ -50,7 +50,7 @@ class TestBooksAPI(TestCase):
         """
         client = self.get_client()
         data = read_file_data('test_data/volumes.json')
-        response = client.post('/api/books/db', data=data, format='json')
+        response = client.post('/api/db/', data=data, format='json')
         self.assertEqual(response.status_code, 201)
         response = client.get('/api/books/')
         self.assertEqual(len(response.data), 12)
@@ -95,7 +95,7 @@ class TestBooksAPI(TestCase):
         """
         client = self.get_client()
         data = read_file_data('test_data/change_categories.json')
-        response = client.post('/api/books/db', data=data, format='json')
+        response = client.post('/api/db/', data=data, format='json')
         self.assertEqual(response.status_code, 201)
         response = client.get('/api/books/1')
         categories = [
