@@ -6,10 +6,11 @@
 
  Endpoints:
  
- /api/books/ - list of all books in database
+ GET /api/books/ - list of all books in database
 
- /api/books/<int:pk> - Detailed info about book with given id
+ GET /api/books/<int:pk> - Detailed info about book with given primary key
 
- /api/books/db - Endpoing for creating/updating many books at once
- Example json for that endpoing:
+ POST /api/db - Endpoing for creating/updating many books at once
+
+ Example json for POST /api/db endpoint:
  https://www.googleapis.com/books/v1/volumes?q=war
