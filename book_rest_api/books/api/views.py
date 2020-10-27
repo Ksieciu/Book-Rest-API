@@ -49,7 +49,11 @@ def create_update_books_db_view(request, *args, **kwargs):
 @api_view(['POST'])
 def create_book_view(request, *args, **kwargs):
     """
-    Creates or updates single book
+    Made for early testing - creates or updates
+    single book.
+    Not working at the moment - in order to work
+    ItemSerializer needs custom create and
+    to_internal_value methods.
     """
     serializer = ItemSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
