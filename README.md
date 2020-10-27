@@ -5,6 +5,7 @@
  For filtering Django-filters were used.
 
  Endpoints:
+ 
  /api/books/ - list of all books in database
 
  /api/books/<int:pk> - Detailed info about book with given id
